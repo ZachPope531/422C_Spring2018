@@ -15,8 +15,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lab3/src/Lab3/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="947">
-              <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+            <state relative-caret-position="378">
+              <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -25,8 +25,8 @@
       <file leaf-file-name="BFSNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab3/src/Lab3/BFSNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+            <state relative-caret-position="225">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -35,8 +35,8 @@
       <file leaf-file-name="WordLadderTester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab3/src/Lab3/WordLadderTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="598">
+              <caret line="114" column="81" lean-forward="true" selection-start-line="114" selection-start-column="81" selection-end-line="114" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,8 +64,8 @@
         <option value="$PROJECT_DIR$/Lab3/src/WordLadderTester.java" />
         <option value="$PROJECT_DIR$/Lab3/src/BFSNode.java" />
         <option value="$PROJECT_DIR$/Lab3/src/Main.java" />
-        <option value="$PROJECT_DIR$/Lab3/src/Lab3/WordLadderTester.java" />
         <option value="$PROJECT_DIR$/Lab3/src/Lab3/BFSNode.java" />
+        <option value="$PROJECT_DIR$/Lab3/src/Lab3/WordLadderTester.java" />
         <option value="$PROJECT_DIR$/Lab3/src/Lab3/Main.java" />
       </list>
     </option>
@@ -315,8 +315,8 @@
     <recent_temporary>
       <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.WordLadderTester" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.WordLadderTester" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.WordLadderTester.testDFS1" />
       </list>
     </recent_temporary>
@@ -341,24 +341,47 @@
       <workItem from="1519584839080" duration="2581000" />
       <workItem from="1519706064980" duration="13225000" />
       <workItem from="1519720717632" duration="282000" />
-      <workItem from="1519760878591" duration="2733000" />
+      <workItem from="1519760878591" duration="4523000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WordLadderTester - 2018.02.27 at 01h 56m 13s.xml">
+    <history-entry file="WordLadderTester - 2018.02.27 at 14h 37m 46s.xml">
       <configuration name="WordLadderTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordLadderTester_testDFS1 - 2018.02.27 at 00h 33m 06s.xml">
-      <configuration name="WordLadderTester.testDFS1" configurationId="JUnit" />
+    <history-entry file="WordLadderTester - 2018.02.27 at 14h 39m 12s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordLadderTester - 2018.02.27 at 14h 39m 38s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordLadderTester - 2018.02.27 at 14h 39m 55s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordLadderTester - 2018.02.27 at 14h 48m 26s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordLadderTester - 2018.02.27 at 14h 51m 40s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordLadderTester - 2018.02.27 at 14h 51m 48s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordLadderTester - 2018.02.27 at 14h 57m 46s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordLadderTester - 2018.02.27 at 15h 00m 04s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WordLadderTester - 2018.02.27 at 15h 00m 26s.xml">
+      <configuration name="WordLadderTester" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21728000" />
+    <option name="totallyTimeSpent" value="23518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="35" width="1942" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -366,7 +389,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -398,16 +421,20 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Lab3/src/Lab3/WordLadderTester.java</url>
-          <line>24</line>
-          <properties class="Lab3.WordLadderTester" method="setUp">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="25" />
+          <line>63</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Lab3/src/Lab3/Main.java</url>
+          <line>244</line>
+          <properties />
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -480,28 +507,36 @@
     <entry file="file://$PROJECT_DIR$/Lab3/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/Lab3/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/Lab3/src/Main.java" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1175">
+          <caret line="59" column="33" lean-forward="false" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab3/src/Lab3/BFSNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lab3/src/Lab3/WordLadderTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="598">
+          <caret line="114" column="81" lean-forward="true" selection-start-line="114" selection-start-column="81" selection-end-line="114" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab3/src/Lab3/BFSNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab3/src/Lab3/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="947">
-          <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+        <state relative-caret-position="378">
+          <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
           <folding />
         </state>
       </provider>

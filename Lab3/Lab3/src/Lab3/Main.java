@@ -48,20 +48,19 @@ public class Main {
 
 		// TODO methods to read in words, output ladder
 		while(true){
-			VisitedDFSWords.clear();
-			VisitedBFSWords.clear();
 			System.out.println("Please enter a start word and end word, separated by a space.");
 			ArrayList<String> words = parse(kb);
 			if(words.contains("/quit")) break;
 
+			System.out.println("**********DFS***********");
+			ArrayList<String> DFSLadder = getWordLadderDFS(words.get(0).toUpperCase(), words.get(1).toUpperCase());
+			printLadder(DFSLadder);
+			VisitedDFSWords.clear();
 
-			ArrayList<String> DFSLadder = getWordLadderBFS(words.get(0).toUpperCase(), words.get(1).toUpperCase());
-			if(DFSLadder.get(0).equals(words.get(0).toUpperCase()) && DFSLadder.get(1).equals(words.get(1).toUpperCase())){
-				System.out.println("no word ladder can be found between " + words.get(0) + " and " + words.get(1) + ".");
-			} else {
-				System.out.println("a " + (DFSLadder.size()-2) + "-rung word ladder exists between " + words.get(0) + " and " + words.get(1) + ".");
-				printLadder(DFSLadder);
-			}
+			System.out.println("\n**********BFS***********");
+			ArrayList<String> BFSLadder = getWordLadderBFS(words.get(0).toUpperCase(), words.get(1).toUpperCase());
+			printLadder(BFSLadder);
+			VisitedBFSWords.clear();
 
 
 		}
@@ -108,6 +107,8 @@ public class Main {
 		// TODO some code
 		//Set<String> dict = makeDictionary();
 		ArrayList<String> DFSLadderRet = new ArrayList<>();
+		start = start.toUpperCase();
+		end = end.toUpperCase();
 		DFSLadderRet.add(start);
 
 		int result = 0;
@@ -217,6 +218,8 @@ public class Main {
 	 * @return		The word ladder
 	 */
     public static ArrayList<String> getWordLadderBFS(String start, String end) {
+    	start = start.toUpperCase();
+    	end = end.toUpperCase();
 
 		BFSQueue = new LinkedList<>();
 
@@ -294,8 +297,13 @@ public class Main {
 	}
 	
 	public static void printLadder(ArrayList<String> ladder) {
-		for(String word : ladder){
-			System.out.println(word);
+		if(ladder.size() == 2){
+			System.out.println("no word ladder can be found between " + ladder.get(0).toLowerCase() + " and " + ladder.get(1).toLowerCase() + ".");
+		} else {
+			System.out.println("a " + (ladder.size()-2) + "-rung word ladder exists between " + ladder.get(0).toLowerCase() + " and " + ladder.get(ladder.size()-1).toLowerCase() + ".");
+			for (String word : ladder) {
+				System.out.println(word);
+			}
 		}
 	}
 

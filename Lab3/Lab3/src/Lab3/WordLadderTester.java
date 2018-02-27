@@ -24,7 +24,7 @@ public class WordLadderTester {
 	@BeforeClass
 	public static void setUp() {
 		Main.initialize();
-		dict = Main.makeDictionary();
+		dict = Main.dict;
 		outContent = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(outContent));
 	}
