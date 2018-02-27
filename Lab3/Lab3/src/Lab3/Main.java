@@ -94,7 +94,13 @@ public class Main {
 		String input = keyboard.nextLine();
 		return new ArrayList<String>(Arrays.asList(input.split(" ")));
 	}
-	
+
+	/**
+	 * Uses depth first search to find a word ladder between two words
+	 * @param start	The first word of the ladder
+	 * @param end	The last word of the ladder
+	 * @return		The word ladder
+	 */
 	public static ArrayList<String> getWordLadderDFS(String start, String end) {
 		
 		// Returned list should be ordered start to end.  Include start and end.
@@ -202,7 +208,14 @@ public class Main {
 
 
 	}
-	
+
+	/**
+	 * Uses breadth first search to find a word ladder between two words
+	 * Created a node class to emulate a linked list with previous pointers
+	 * @param start	The first word of the ladder
+	 * @param end	The last word of the ladder
+	 * @return		The word ladder
+	 */
     public static ArrayList<String> getWordLadderBFS(String start, String end) {
 
 		BFSQueue = new LinkedList<>();
@@ -210,32 +223,63 @@ public class Main {
 		ArrayList<String> BFSLadder = new ArrayList<>();
 		LinkedList<BFSNode> nodesList = new LinkedList<>();
 		BFSQueue.add(start);
-		BFSNode startNode = new BFSNode(start, null);
-		nodesList.add(startNode);
 		VisitedBFSWords.add(start);
+
+		BFSNode currentNode = new BFSNode();
 
 		while(!BFSQueue.isEmpty()){
 			String word = BFSQueue.poll();
+
+			//Find the most recent parent node
+			for(BFSNode nodeSearch : nodesList){
+				if(nodeSearch.word.equals(word)){
+					currentNode = nodeSearch;
+					break;
+				}
+			}
+
+			//Initialize the node list if you need to
+			if(nodesList.isEmpty()){
+				currentNode = new BFSNode(word, null);
+				nodesList.add(currentNode);
+			}
+
+			//Once the end word is found, go through the node list
+			//and add the node chain to the ladder
 			if(word.equals(end)){
-				BFSLadder.add(end);
+				while(currentNode.previousNode != null){
+					BFSLadder.add(currentNode.word);
+					currentNode = currentNode.previousNode;
+				}
+				BFSLadder.add(currentNode.word);
+				Collections.reverse(BFSLadder);
 				BFSQueue.clear();
 				return BFSLadder;
 			}
 
+			//Add all the words that are one letter different from the current node and
+			//haven't been seen yet to the queue
 			for(String wordToQueue : WordNeighbors.get(WordNeighborsIndex.indexOf(word))){
 				if(!VisitedBFSWords.contains(wordToQueue)){
 					BFSQueue.add(wordToQueue);
-					//BFSNode nodeToQueue = new BFSNode(wordToQueue, nodesList.get(word));
+					VisitedBFSWords.add(wordToQueue);
+					BFSNode newNode = new BFSNode(wordToQueue, currentNode);
+					nodesList.add(newNode);
 				}
 			}
 		}
 
-		BFSLadder.addAll(BFSQueue);
-		
+		BFSLadder.add(start);
+		BFSLadder.add(end);
 		return BFSLadder; // replace this line later with real return
 	}
 
 
+	/**
+	 * Used in initialize(), finds the "neighboring" words of the current word
+	 * @param word	The current word
+	 * @return		An array list of neighboring words
+	 */
 	public static ArrayList<String> findNeighbors(String word){
 		ArrayList<String> neighbors = new ArrayList<>();
 
@@ -254,9 +298,8 @@ public class Main {
 			System.out.println(word);
 		}
 	}
-	// TODO
-	// Other private static methods here
 
+	//Find the difference in letters between two words
 	private static int getDifference(String word1, String word2){
 		int retNum = 0;
 		for(int i = 0; i < word1.length(); i++){
