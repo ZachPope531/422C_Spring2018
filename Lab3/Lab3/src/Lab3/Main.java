@@ -1,3 +1,4 @@
+package Lab3;
 /* WORD LADDER Main.java
  * EE422C Project 3 submission by
  * Replace <...> with your actual data.
@@ -10,12 +11,14 @@
  */
 
 
-import java.lang.reflect.Array;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.*;
-import java.io.*;
+
 
 public class Main {
-	
+
 	// static variables and constants only here
 
 	public static HashSet<String> VisitedBFSWords;
@@ -119,7 +122,7 @@ public class Main {
 	}
 
 	/**
-	 * Helper function for the original getWordLadderDFS
+     * Helper function for the original getWordLadderDFS
 	 * @param start	The current word being looked at
 	 * @param end	The destination word
 	 * @param DFSLadder	The ladder
@@ -205,7 +208,10 @@ public class Main {
 		BFSQueue = new LinkedList<>();
 
 		ArrayList<String> BFSLadder = new ArrayList<>();
+		LinkedList<BFSNode> nodesList = new LinkedList<>();
 		BFSQueue.add(start);
+		BFSNode startNode = new BFSNode(start, null);
+		nodesList.add(startNode);
 		VisitedBFSWords.add(start);
 
 		while(!BFSQueue.isEmpty()){
@@ -219,6 +225,7 @@ public class Main {
 			for(String wordToQueue : WordNeighbors.get(WordNeighborsIndex.indexOf(word))){
 				if(!VisitedBFSWords.contains(wordToQueue)){
 					BFSQueue.add(wordToQueue);
+					//BFSNode nodeToQueue = new BFSNode(wordToQueue, nodesList.get(word));
 				}
 			}
 		}
