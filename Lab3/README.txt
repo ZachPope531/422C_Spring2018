@@ -1,0 +1,1 @@
+The project assumes that dict is static and created in initialize(), nowhere else
