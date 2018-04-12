@@ -1,18 +1,6 @@
 package assignment5;
 
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
-import javafx.scene.Node;
-import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.*;
-import org.w3c.dom.css.RGBColor;
-
-import java.lang.reflect.Method;
 import java.util.List;
-
-import static javafx.scene.paint.Color.rgb;
 
 public abstract class Critter {
 	/* NEW FOR PROJECT 5 */
@@ -75,115 +63,45 @@ public abstract class Critter {
 				}
 			case 1:
 				if(!steps){
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord+1 && crit.y_coord == this.y_coord-1){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				} else {
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord+2 && crit.y_coord == this.y_coord-2){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				}
 			case 2:
 				if(!steps){
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord && crit.y_coord == this.y_coord-1){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				} else {
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord && crit.y_coord == this.y_coord-2){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				}
 			case 3:
 				if(!steps){
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord-1 && crit.y_coord == this.y_coord-1){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				} else {
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord-2 && crit.y_coord == this.y_coord-2){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				}
 			case 4:
 				if(!steps){
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord-1 && crit.y_coord == this.y_coord){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				} else {
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord-2 && crit.y_coord == this.y_coord){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				}
 			case 5:
 				if(!steps){
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord-1 && crit.y_coord == this.y_coord+1){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				} else {
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord-2 && crit.y_coord == this.y_coord+2){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				}
 			case 6:
 				if(!steps){
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord && crit.y_coord == this.y_coord+1){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				} else {
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord && crit.y_coord == this.y_coord+2){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				}
 			case 7:
 				if(!steps){
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord+1 && crit.y_coord == this.y_coord+1){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				} else {
-					for(Critter crit : population){
-						if(crit.x_coord == this.x_coord+2 && crit.y_coord == this.y_coord+2){
-							return crit.toString();
-						}
-					}
-					return null;
+
 				}
 			default:
 				return null;
@@ -379,207 +297,9 @@ public abstract class Critter {
 	public abstract boolean fight(String opponent);
 	
 	
-	public static void worldTimeStep() {
-		for(Critter critter : population){
-			critter.doTimeStep();
-			critter.hasMoved = false;
-		}
-		//Resolve encounters
-		for(int i = 0; i < population.size()-1; i++){
-			Critter A = population.get(i);
-
-			//Don't choose a dead critter
-			if(A.energy <= 0) continue;
-
-			for(int j = i+1; j < population.size(); j++){
-				Critter B = population.get(j);
-
-				//Don't choose a dead critter
-				if(B.energy <= 0) continue;
-
-				if(A.x_coord == B.x_coord && A.y_coord == B.y_coord){
-					int oldX = A.x_coord;
-					int oldY = A.y_coord;
-
-					boolean Afights = A.fight(B.toString());
-					boolean Bfights = B.fight(A.toString());
-
-					if(A.energy <= 0){
-						break;
-					}
-					if(B.energy <= 0){
-						continue;
-					}
-
-					//A tried to move into a spot occupied by a critter
-					if(A.x_coord != oldX && A.y_coord != oldY){
-						for(Critter crit : population){
-							if(crit != A && A.x_coord == crit.x_coord && A.y_coord == crit.y_coord){
-								A.x_coord = oldX;
-								A.y_coord = oldY;
-							}
-						}
-					}
-
-					//B tried to move into a spot occupied by a critter
-					if(B.x_coord != oldX && B.y_coord != oldY){
-						for(Critter crit : population){
-							if(crit != B && B.x_coord == crit.x_coord && B.y_coord == crit.y_coord){
-								B.x_coord = oldX;
-								B.y_coord = oldY;
-							}
-						}
-					}
-
-					//A critter may have fled, check the positions again
-					if(A.x_coord == B.x_coord && A.y_coord == B.y_coord) {
-						int Achance;
-						int Bchance;
-						if (!Afights) {
-							Achance = 0;
-						} else {
-							Achance = getRandomInt(A.energy);
-						}
-						if (!Bfights) {
-							Bchance = 0;
-						} else {
-							Bchance = getRandomInt(B.energy);
-						}
-
-						//Kill whoever has less energy
-						if(Achance > Bchance){
-							A.energy += Math.floor(B.energy/2);
-							B.energy = -1; //B is dead
-						} else if(Bchance > Achance){
-							B.energy += Math.floor(A.energy/2);
-							A.energy = -1; //A is dead
-							break;
-						} else { //Arbitrarily let A win
-							A.energy += Math.floor(B.energy/2);
-							B.energy = -1; //B is dead
-						}
-					}
-
-				}
-			}
-		}
-
-		//Update rest energy
-		for(Critter crit : population){
-			crit.energy -= Params.rest_energy_cost;
-		}
-
-		//If a critter has <= 0 energy, it has died
-		for(int i = population.size()-1; i >= 0; i--){
-			if(population.get(i).energy <= 0){
-				population.remove(population.get(i));
-			}
-		}
-		//Generate Algae
-		for(int i = 0; i < Params.refresh_algae_count; i++){
-			try {
-				makeCritter("Algae");
-			} catch (InvalidCritterException e){
-				System.out.println("Damn");
-			}
-		}
-
-		//Move babies to population
-		population.addAll(babies);
-		babies.clear();
-	}
+	public static void worldTimeStep() {}
 	
-	public static void displayWorld(Object pane) {
-		for(Node node : ((GridPane)pane).getChildren()){
-			if(node instanceof Shape) {
-				((Shape) node).setFill(rgb(122, 112, 254));
-				((Shape) node).setStroke(rgb(122,112, 254));
-			}
-		}
-		((GridPane)pane).getChildren().removeAll(Node.getClassCssMetaData());
-		for(Critter critter : population){
-			Shape baseShape;
-			switch(critter.viewShape()){
-				case STAR:
-					double hand = (500.0 / Params.world_width - 150.0 / Params.world_width)/8.0-1.0;
-					baseShape = new Polygon();
-					((Polygon) baseShape).getPoints().addAll(new Double[]
-							{
-									0.0, hand * 3,
-									hand * 2, hand * 2,
-									hand * 3, 0.0,
-									hand * 4, hand * 2,
-									hand * 6, hand * 3,
-									hand * 4, hand * 4,
-									hand * 3, hand * 6,
-									hand * 2, hand * 4
-							});
-					baseShape.setFill(critter.viewFillColor());
-					baseShape.setStroke(critter.viewOutlineColor());
-					((GridPane)pane).add((Polygon)baseShape, critter.x_coord, critter.y_coord);
-					GridPane.setHalignment((Polygon)baseShape, HPos.CENTER);
-					GridPane.setValignment((Polygon)baseShape, VPos.CENTER);
-					break;
-				case CIRCLE:
-					baseShape = new Circle();
-					baseShape.setFill(critter.viewFillColor());
-					baseShape.setStroke(critter.viewFillColor());
-					baseShape.setStrokeWidth(2);
-					int radius = Params.world_width > Params.world_height ? (500 / Params.world_height - 150 / Params.world_height)/2 : (500 / Params.world_width - 150 / Params.world_width)/2;
-					((Circle)baseShape).setRadius(radius);
-					((Circle)baseShape).setVisible(true);
-					((GridPane)pane).add(((Circle)baseShape), critter.y_coord, critter.x_coord);
-					GridPane.setHalignment(((Circle)baseShape), HPos.CENTER);
-					GridPane.setValignment(((Circle)baseShape), VPos.CENTER);
-					break;
-				case SQUARE:
-					baseShape = new Rectangle();
-					baseShape.setFill(critter.viewColor());
-					((Rectangle)baseShape).setHeight(500 / Params.world_width - 150 / Params.world_width);
-					((Rectangle)baseShape).setWidth(500 / Params.world_height - 150 / Params.world_height);
-					((Rectangle)baseShape).setVisible(true);
-					((GridPane)pane).add(((Rectangle)baseShape), critter.y_coord, critter.x_coord);
-					GridPane.setHalignment(((Rectangle)baseShape), HPos.CENTER);
-					GridPane.setValignment(((Rectangle)baseShape), VPos.CENTER);
-					break;
-				case DIAMOND:
-					baseShape = new Polygon();
-					double gridWidth = 200.0/Params.world_width;
-					double gridHeight = 200.0/Params.world_height;
-					((Polygon)baseShape).getPoints().addAll(new Double[]{
-							gridWidth/2, 1.0,
-							1.0, gridHeight/2,
-							gridWidth/2, gridHeight-1.0,
-							gridWidth-1.0, gridHeight/2
-					});
-					baseShape.setFill(critter.viewFillColor());
-					baseShape.setStroke(critter.viewOutlineColor());
-					((GridPane)pane).add((Polygon)baseShape, critter.x_coord, critter.y_coord);
-					GridPane.setHalignment((Polygon)baseShape, HPos.CENTER);
-					GridPane.setValignment((Polygon)baseShape, VPos.CENTER);
-					break;
-				case TRIANGLE:
-					baseShape = new Polygon();
-					double gridWidthTriangle = 250.0/Params.world_width;
-					double gridHeightTriangle = 250.0/Params.world_height;
-					((Polygon) baseShape).getPoints().addAll(new Double[]{
-							1.0, gridHeightTriangle - 1.0,
-							gridWidthTriangle/2, 1.0,
-							gridWidthTriangle - 1.0, gridHeightTriangle - 1.0
-					});
-					baseShape.setFill(critter.viewFillColor());
-					baseShape.setStroke(critter.viewOutlineColor());
-					((GridPane)pane).add((Polygon)baseShape, critter.x_coord, critter.y_coord);
-					GridPane.setHalignment((Polygon)baseShape, HPos.CENTER);
-					GridPane.setValignment((Polygon)baseShape, VPos.CENTER);
-					break;
-				default:
-					baseShape = new Rectangle();
-					break;
-			}
-
-		}
-	}
+	public static void displayWorld(Object pane) {} 
 	/* Alternate displayWorld, where you use Main.<pane> to reach into your
 	   display component.
 	   // public static void displayWorld() {}
